@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GroupAssignment"
         mc:Ignorable="d"
-        Title="MainWindow" Height="398.203" Width="633.852">
+        Title="Items Window" Height="400" Width="635">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170*"/>
+            <ColumnDefinition Width="143*"/>
+        </Grid.ColumnDefinitions>
         <DataGrid x:Name="itemDesc" HorizontalAlignment="Left" Height="323" Margin="10,10,0,0" VerticalAlignment="Top" Width="298"
             SelectedItem="{Binding Path=CurrentSequence, Mode=TwoWay}" AutoGenerateColumns="False">
             <DataGrid.Columns>
@@ -18,24 +22,24 @@
                 <ContextMenu/>
             </DataGrid.ContextMenu>
         </DataGrid>
-        <Button x:Name="addItemBTN" Content="Submit" HorizontalAlignment="Left" Margin="526,123,0,0" VerticalAlignment="Top" Width="75" Click="addItem_Click"/>
-        <GroupBox x:Name="addItemGB" Header="Add Item" HorizontalAlignment="Left" Height="147" Margin="313,10,0,0" VerticalAlignment="Top" Width="303"/>
-        <TextBox x:Name="itemDescTB" HorizontalAlignment="Left" Height="23" Margin="436,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
-        <Label x:Name="itemDescLB" Content="Item Description:" HorizontalAlignment="Left" Margin="332,58,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="itemCostLB" Content="Item Cost:" HorizontalAlignment="Left" Margin="332,92,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="itemCostTB" HorizontalAlignment="Left" Height="23" Margin="436,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
-        <GroupBox x:Name="editItemGB" Header="Edit Item" HorizontalAlignment="Left" Height="148" Margin="313,160,0,0" VerticalAlignment="Top" Width="303"/>
-        <Label x:Name="eItemDescriptionLB" Content="Item Desciption:" HorizontalAlignment="Left" Margin="333,212,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="eItemDescTB" HorizontalAlignment="Left" Height="23" Margin="436,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
-        <TextBox x:Name="eItemCostTB" HorizontalAlignment="Left" Height="23" Margin="436,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
-        <Label x:Name="eItemCostLB" Content="Item Cost:" HorizontalAlignment="Left" Margin="333,241,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="editItemBTN" Content="Submit" HorizontalAlignment="Left" Margin="526,275,0,0" VerticalAlignment="Top" Width="75" Click="editItemBTN_Click"/>
-        <Button x:Name="deleteItemBTN" Content="Delete Item" HorizontalAlignment="Left" Margin="333,323,0,0" VerticalAlignment="Top" Width="75" Click="deleteItemBTN_Click"/>
-        <Button x:Name="mainMenuBTN" Content="Main Menu" HorizontalAlignment="Left" Margin="526,323,0,0" VerticalAlignment="Top" Width="75" Click="mainMenuBTN_Click"/>
-        <Label x:Name="itemCodeLBL" Content="Item Code:" HorizontalAlignment="Left" Margin="333,29,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="itemCodeTB" HorizontalAlignment="Left" Height="23" Margin="436,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
-        <Label x:Name="eItemCodeLBL" Content="Item Code:" HorizontalAlignment="Left" Margin="333,185,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="eItemCodeTB" HorizontalAlignment="Left" Height="23" Margin="436,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
+        <Button x:Name="addItemBTN" Content="Submit" HorizontalAlignment="Left" Margin="185.754,123,0,0" VerticalAlignment="Top" Width="75" Click="AddItem_Click" Grid.Column="1"/>
+        <GroupBox x:Name="addItemGB" Header="Add Item" HorizontalAlignment="Left" Height="147" Margin="313,10,0,0" VerticalAlignment="Top" Width="303" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="itemDescTB" HorizontalAlignment="Left" Height="23" Margin="95.754,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Grid.Column="1"/>
+        <Label x:Name="itemDescLB" Content="Item Description:" HorizontalAlignment="Left" Margin="332,58,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label x:Name="itemCostLB" Content="Item Cost:" HorizontalAlignment="Left" Margin="332,92,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="itemCostTB" HorizontalAlignment="Left" Height="23" Margin="95.754,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Grid.Column="1"/>
+        <GroupBox x:Name="editItemGB" Header="Edit Item" HorizontalAlignment="Left" Height="148" Margin="313,160,0,0" VerticalAlignment="Top" Width="303" Grid.ColumnSpan="2"/>
+        <Label x:Name="eItemDescriptionLB" Content="Item Desciption:" HorizontalAlignment="Left" Margin="333,212,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="eItemDescTB" HorizontalAlignment="Left" Height="23" Margin="95.754,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Grid.Column="1"/>
+        <TextBox x:Name="eItemCostTB" HorizontalAlignment="Left" Height="23" Margin="95.754,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Grid.Column="1"/>
+        <Label x:Name="eItemCostLB" Content="Item Cost:" HorizontalAlignment="Left" Margin="333,241,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button x:Name="editItemBTN" Content="Submit" HorizontalAlignment="Left" Margin="185.754,275,0,0" VerticalAlignment="Top" Width="75" Click="EditItemBTN_Click" Grid.Column="1"/>
+        <Button x:Name="deleteItemBTN" Content="Delete Item" HorizontalAlignment="Left" Margin="333,323,0,0" VerticalAlignment="Top" Width="75" Click="DeleteItemBTN_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="mainMenuBTN" Content="Main Menu" HorizontalAlignment="Left" Margin="185.754,323,0,0" VerticalAlignment="Top" Width="75" Click="MainMenuBTN_Click" Grid.Column="1"/>
+        <Label x:Name="itemCodeLBL" Content="Item Code:" HorizontalAlignment="Left" Margin="333,29,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="itemCodeTB" HorizontalAlignment="Left" Height="23" Margin="95.754,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Grid.Column="1"/>
+        <Label x:Name="eItemCodeLBL" Content="Item Code:" HorizontalAlignment="Left" Margin="333,185,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="eItemCodeTB" HorizontalAlignment="Left" Height="23" Margin="95.754,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Grid.Column="1"/>
 
     </Grid>
 </Window>

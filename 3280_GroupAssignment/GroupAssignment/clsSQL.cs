@@ -35,7 +35,27 @@ namespace GroupAssignment
         }
 
         /// <summary>
-        /// addes a new row with passed in values into the Database. 
+        /// Gets the data given parameters.
+        /// </summary>
+        /// <param name="invoiceNumber">The invoice number.</param>
+        /// <param name="fromDate">From date.</param>
+        /// <param name="toDate">To date.</param>
+        /// <param name="total">The total.</param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public string getInvoices(int invoiceNumber, DateTime fromDate, DateTime toDate, double total) {
+            try {
+                /// return data based on criteria passed.
+                string sSQL = "SELECT * FROM Invoices WHERE InvoiceNum = '" + invoiceNumber + "' AND InvoiceDate > '" + fromDate + "' AND Invoice Date < '" + toDate + "' AND total = '" + total + "'";
+                return sSQL;
+            } catch (Exception ex) {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
+            }
+            
+        }
+
+        /// <summary>
+        /// adds a new row with passed in values into the Database. 
         /// </summary>
         /// <param name="itemDesc"></param>
         /// <param name="cost"></param>
@@ -75,15 +95,71 @@ namespace GroupAssignment
         /// Deletes the row that the passed in item code is a part of
         /// </summary>
         /// <param name="itemCode"></param>
-        public void deleteItem(string itemCode)
+        public string deleteItem(string itemCode)
         {
             try
             {
                 string sSQL = "DELETE FROM ItemDesc WHERE ItemCode = '" + itemCode + "'";
-                db.ExecuteNonQuery(sSQL);
+                return sSQL;
             }
             catch (Exception ex)
             {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Deletes the invoice.
+        /// </summary>
+        /// <param name="invoiceNum">The invoice number.</param>
+        /// <returns></returns>
+        public string deleteInvoice(string invoiceNum) {
+            try {
+                string sSQL = "DELETE FROM Invoice WHERE InvoiceNum = '" + invoiceNum + "'";
+                return sSQL;
+            } catch (Exception ex) {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Edits the invoice.
+        /// </summary>
+        /// <param name="invoiceNum">The invoice number.</param>
+        /// <returns></returns>
+        public string editInvoice(string invoiceNum) {
+            try {
+                string sSQL = "UPDATE Invoices";
+                return sSQL;
+            } catch (Exception ex) {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Inserts the invoice.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public string insertInvoice() {
+            try {
+                string sSQL = "INSERT INTO Invoice";
+                return sSQL;
+            } catch (Exception ex) {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Inserts the line item.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public string insertLineItem() {
+            try {
+                string sSQL = "INSERT INTO LineItems";
+                return sSQL;
+            } catch (Exception ex) {
                 throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
             }
         }

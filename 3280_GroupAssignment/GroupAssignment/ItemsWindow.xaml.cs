@@ -66,7 +66,7 @@ namespace GroupAssignment
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void addItem_Click(object sender, RoutedEventArgs e)
+        private void AddItem_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -84,7 +84,7 @@ namespace GroupAssignment
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void editItemBTN_Click(object sender, RoutedEventArgs e)
+        private void EditItemBTN_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -102,7 +102,7 @@ namespace GroupAssignment
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void deleteItemBTN_Click(object sender, RoutedEventArgs e)
+        private void DeleteItemBTN_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -120,7 +120,7 @@ namespace GroupAssignment
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void mainMenuBTN_Click(object sender, RoutedEventArgs e)
+        private void MainMenuBTN_Click(object sender, RoutedEventArgs e)
         {
             try
             {

@@ -1,0 +1,38 @@
+﻿<Window x:Class="GroupAssignment.InvoiceSearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GroupAssignment"
+        mc:Ignorable="d"
+        Title="Search Invoices" Height="400" Width="635">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox x:Name="searchInvoiceGB" Header="Search Invoice " HorizontalAlignment="Left" Height="192" Margin="81,23,0,0" VerticalAlignment="Top" Width="237" Grid.Column="1"/>
+        <Label x:Name="InvoiceNumberLBL" Content="Invoice Number:" HorizontalAlignment="Left" Margin="100,47,0,0" VerticalAlignment="Top" IsEnabled="False" Height="23" Width="97" Grid.Column="1" HorizontalContentAlignment="Right"/>
+        <Label x:Name="InvoiceToDateLBL" Content="Invoice To Date:" HorizontalAlignment="Left" Margin="90,143,0,0" VerticalAlignment="Top" IsEnabled="False" Height="26" Width="107" Grid.Column="1" HorizontalContentAlignment="Right"/>
+        <DataGrid HorizontalAlignment="Left" Height="314" Margin="17,23,0,0" VerticalAlignment="Top" Width="338" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Invoice #" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Custumer" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Invoice Date" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Number of Items" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Total" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DatePicker x:Name="InvoiceToDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="203,145,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="InvoiceTotalLBL" Content="Invoice Total:" HorizontalAlignment="Left" Margin="100,80,0,0" VerticalAlignment="Top" IsEnabled="False" Height="23" Width="97" Grid.Column="1" HorizontalContentAlignment="Right" RenderTransformOrigin="0.526,2.913"/>
+        <Label x:Name="InvoiceFromDateLBL" Content="Invoice From Date:" HorizontalAlignment="Left" Margin="90,114,0,0" VerticalAlignment="Top" IsEnabled="False" Height="26" Width="107" Grid.Column="1" HorizontalContentAlignment="Right"/>
+        <DatePicker x:Name="InvoiceFromDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="203,116,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="searchInvoiceSubmitBTN" Content="Submit" HorizontalAlignment="Left" Margin="230,184,0,0" VerticalAlignment="Top" Width="75" Click="SearchInvoiceSubmitBTN_Click" Grid.Column="1"/>
+        <Button x:Name="resetSearchInvoiceBTN" Content="Reset" HorizontalAlignment="Left" Margin="100,184,0,0" VerticalAlignment="Top" Width="75" Click="ResetSearchInvoiceBTN_Click" Grid.Column="1"/>
+        <Button x:Name="mainMenuBTN" Content="Main Menu" HorizontalAlignment="Left" Margin="229.754,323,0,0" VerticalAlignment="Top" Width="75" Click="MainMenuBTN_Click" Grid.Column="1"/>
+        <ComboBox x:Name="invoiceNumberComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Grid.Column="1" Margin="203,50,0,0" Height="20"/>
+        <ComboBox x:Name="invoiceTotalComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Grid.Column="1" Margin="203,83,0,0" Height="20"/>
+        <Button x:Name="SelectBTN" Content="Select" Grid.Column="1" HorizontalAlignment="Left" Margin="100,323,0,0" VerticalAlignment="Top" Width="75" Click="SelectBTN_Click"/>
+
+    </Grid>
+</Window>
